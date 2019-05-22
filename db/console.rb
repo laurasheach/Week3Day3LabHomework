@@ -46,7 +46,5 @@ album4.save()
 
 all_albums = Album.all()
 
-
-
 binding.pry
 nil
