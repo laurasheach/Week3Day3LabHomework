@@ -25,4 +25,11 @@ class Album
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM albums"
+    albums_hashes = SqlRunner.run(sql)
+    albums = albums_hashes.map {|records| Album.new(records)}
+    return albums 
+  end
+
 end

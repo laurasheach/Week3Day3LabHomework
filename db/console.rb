@@ -14,6 +14,8 @@ artist2.save()
 artist3 = Artist.new({'name' => 'Calvin Harris'})
 artist3.save()
 
+all_artists = Artist.all()
+
 album1 = Album.new({
   'title' => 'Definitely Maybe',
   'genre' => 'Rock',
@@ -41,6 +43,10 @@ album4 = Album.new({
   'artist_id' => artist1.id
   })
 album4.save()
+
+all_albums = Album.all()
+
+
 
 binding.pry
 nil
