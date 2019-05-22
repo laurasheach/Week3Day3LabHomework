@@ -20,6 +20,12 @@ class Album
     @id = SqlRunner.run(sql, values)[0]['id']
   end
 
+  def update()
+    sql = "UPDATE albums SET (title, genre, artist_id) = ($1, $2, $3) WHERE id = $4"
+    values = [@title, @genre, @artist_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM artists"
     SqlRunner.run(sql)

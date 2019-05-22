@@ -46,5 +46,14 @@ album4.save()
 
 all_albums = Album.all()
 
+
+artist2.name = "Rudimental"
+artist2.update()
+
+album2.title = "We The Generation"
+album2.genre = "Dance"
+album2.update()
+
+
 binding.pry
 nil

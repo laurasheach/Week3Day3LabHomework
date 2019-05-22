@@ -4,7 +4,8 @@ require_relative('album')
 
 class Artist
 
-  attr_reader :id, :name
+  attr_accessor :name
+  attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -17,6 +18,12 @@ class Artist
     result = SqlRunner.run(sql, values)
     id_string = result[0]['id']
     @id = id_string.to_i
+  end
+
+  def update()
+    sql = "UPDATE artists SET name = $1 WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
