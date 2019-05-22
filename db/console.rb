@@ -14,7 +14,7 @@ artist2.save()
 artist3 = Artist.new({'name' => 'Calvin Harris'})
 artist3.save()
 
-all_artists = Artist.all()
+
 
 album1 = Album.new({
   'title' => 'Definitely Maybe',
@@ -44,8 +44,6 @@ album4 = Album.new({
   })
 album4.save()
 
-all_albums = Album.all()
-
 album3.delete()
 artist3.delete()
 
@@ -56,6 +54,11 @@ album2.title = "We The Generation"
 album2.genre = "Dance"
 album2.update()
 
+all_albums = Album.all()
+all_artists = Artist.all()
+
+returned_artist = Artist.find(artist1.id)
+returned_album = Album.find(album1.id)
 
 binding.pry
 nil
