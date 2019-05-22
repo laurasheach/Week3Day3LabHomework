@@ -46,6 +46,8 @@ album4.save()
 
 all_albums = Album.all()
 
+album3.delete()
+artist3.delete()
 
 artist2.name = "Rudimental"
 artist2.update()
